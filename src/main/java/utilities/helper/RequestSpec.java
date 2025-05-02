@@ -12,5 +12,4 @@ public class RequestSpec {
                 .setContentType("application/json")
                 .build();
     }
-
 }

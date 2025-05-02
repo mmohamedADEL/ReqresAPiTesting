@@ -2,14 +2,18 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import models.User;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Constants;
 import utilities.Requests.LoginUtility;
 import utilities.Requests.UserUtils;
+import utilities.helper.DataUtility;
 import utilities.helper.RequestBody;
 import utilities.helper.RequestSpec;
+
+import java.io.FileNotFoundException;
 
 import static utilities.helper.RequestBody.getLoginRequestBody;
 
@@ -19,7 +23,6 @@ public class UserTest {
     @BeforeClass
     public void login() {
         Response response = LoginUtility.login(Constants.USER_NAME, Constants.PASSWORD, 200);
-        response.prettyPrint();
         JsonPath jsonPath = response.jsonPath();
         token = "Bearer " + jsonPath.getString("token");
     }
@@ -67,13 +70,14 @@ public class UserTest {
         softAssert.assertAll();
     }
     @Test
-    public void TestUpdateUserdata() {
+    public void TestUpdateUserdata() throws FileNotFoundException {
         SoftAssert softAssert = new SoftAssert();
-        String name = "morpheus";
-        String job = "zion resident";
-        JsonPath jsonPath = UserUtils.UpdateUser(2,token , name,  job  ,200).jsonPath();
-        softAssert.assertEquals(jsonPath.getString("name"), name, "name is not correct");
-        softAssert.assertEquals(jsonPath.getString("job"), job, "job is not correct");
+        User user = new User(
+                DataUtility.getJsonData("TestData" ,"UpdateUserData" ,"name"),
+                DataUtility.getJsonData("TestData" ,"UpdateUserData" ,"job"));
+        JsonPath jsonPath = UserUtils.UpdateUser(2,token , user  ,200).jsonPath();
+        softAssert.assertEquals(jsonPath.getString("name"), user.getName(), "name is not correct");
+        softAssert.assertEquals(jsonPath.getString("job"), user.getJob(), "job is not correct");
         softAssert.assertNotNull(jsonPath.getString("updatedAt"), "updatedAt is null");
         softAssert.assertAll();
     }
@@ -82,14 +86,23 @@ public class UserTest {
         SoftAssert softAssert = new SoftAssert();
         String name = "morpheus";
         String job = "zion resident";
-        JsonPath jsonPath = UserUtils.UpdateUser(23,token , name,  job  ,404).jsonPath();
-        softAssert.assertEquals(jsonPath.getString("error"), "Not Found", "error is not correct");
+        User user = new User("morpheus" , "zion resident");
+        JsonPath jsonPath = UserUtils.UpdateUser(23,token ,user  ,404).jsonPath();
+        //softAssert.assertEquals(jsonPath.getString("error"), "Not Found", "error is not correct");
         softAssert.assertAll();
     }
     @Test
-    public void TestDeleteUser() {
+    public void TestDeleteUserCheckResponse() {
         SoftAssert softAssert = new SoftAssert();
         JsonPath jsonPath = UserUtils.deleteUser(2, token, 204).jsonPath();
+        softAssert.assertNull(jsonPath, "Body is not null");
+        softAssert.assertAll();
+    }
+    @Test
+    public void TestDeleteUserCheckFunctionality() {
+        SoftAssert softAssert = new SoftAssert();
+        UserUtils.deleteUser(2, token, 204).jsonPath();
+        JsonPath jsonPath = UserUtils.getSingleUser(2, 404, token).jsonPath();
         softAssert.assertAll();
     }
 

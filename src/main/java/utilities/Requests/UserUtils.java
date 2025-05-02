@@ -16,6 +16,7 @@ public class UserUtils {
                 .when()
                 .get(Constants.BASE_URL + Constants.USERS_ENDPOINT + "/" + id)
                 .then()
+                .log().all()
                 .statusCode(statusCode)
                 .extract()
                 .response();
@@ -35,8 +36,7 @@ public class UserUtils {
                 .extract()
                 .response();
     }
-    public static Response UpdateUser(int id, String token, String name, String job, int statusCode) {
-        User user = new User(name, job);
+    public static Response UpdateUser(int id, String token, User user, int statusCode) {
         return RestAssured.given()
                 .spec(RequestSpec.getRequestSpec())
                 .header("Authorization", token)
@@ -55,6 +55,19 @@ public class UserUtils {
                 .header("Authorization", token)
                 .when()
                 .delete(Constants.BASE_URL + Constants.USERS_ENDPOINT + "/" + id)
+                .then()
+                .log().all()
+                .statusCode(statusCode)
+                .extract()
+                .response();
+    }
+    public static Response createUser(String token, User user, int statusCode) {
+        return RestAssured.given()
+                .spec(RequestSpec.getRequestSpec())
+                .header("Authorization", token)
+                .body(user)
+                .when()
+                .post(Constants.BASE_URL + Constants.USERS_ENDPOINT)
                 .then()
                 .log().all()
                 .statusCode(statusCode)

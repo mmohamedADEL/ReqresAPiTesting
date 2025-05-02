@@ -1,0 +1,10 @@
+{
+  "UpdateUserData": {
+    "name": "John Doe",
+    "job": "Software Engineer"
+  },
+  "CreateUserData": {
+    "name": "Mohamed Ali",
+    "job": "Project Manager"
+  }
+}
