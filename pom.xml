@@ -21,10 +21,21 @@
         <allure.version>2.29.1</allure.version>
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
         <sureFire.version>3.5.3</sureFire.version>
+        <allure_maven.version>2.12.0</allure_maven.version>
+        <allure_pluginAPI.version>2.13.9</allure_pluginAPI.version>
+        <suiteXmlFile>TestRunner/AllTests.xml</suiteXmlFile>
     </properties>
     <build>
         <directory>Test-output/target</directory>
         <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure_maven.version}</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -33,6 +44,9 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
                     </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
                 <dependencies>
                     <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
@@ -42,12 +56,19 @@
                         <version>${aspectjweaver.version}</version>
                         <scope>runtime</scope>
                     </dependency>
-
                 </dependencies>
             </plugin>
+
         </plugins>
     </build>
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-plugin-api -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-plugin-api</artifactId>
+            <version>2.34.0</version>
+        </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>

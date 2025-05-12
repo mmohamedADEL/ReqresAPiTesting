@@ -1,0 +1,78 @@
+[INFO] 12-05-2025 13:26:54 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: Test_Five_E2E
+[INFO] 12-05-2025 13:27:24 [main] [Tests.E2ETests.Test_Five_E2E(E2ETests.java:179)] - Step 1: Login successful.
+[INFO] 12-05-2025 13:27:40 [main] [Tests.E2ETests.Test_Five_E2E(E2ETests.java:186)] - Step 2: Single resource retrieval request sent.
+[INFO] 12-05-2025 13:27:40 [main] [Tests.E2ETests.Test_Five_E2E(E2ETests.java:189)] - Step 2: Single resource retrieved successfully.
+[INFO] 12-05-2025 13:27:40 [main] [Tests.E2ETests.Test_Five_E2E(E2ETests.java:193)] - Step 3: All resources retrieval request sent.
+[INFO] 12-05-2025 13:27:41 [main] [Tests.E2ETests.Test_Five_E2E(E2ETests.java:202)] - Step 3: All resources retrieved successfully.
+[INFO] 12-05-2025 13:27:42 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: Test_Five_E2E
+[INFO] 12-05-2025 13:27:42 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: Test_Four_E2E
+[INFO] 12-05-2025 13:27:42 [main] [Tests.E2ETests.Test_Four_E2E(E2ETests.java:136)] - Step 1: Login successful.
+[INFO] 12-05-2025 13:27:43 [main] [Tests.E2ETests.Test_Four_E2E(E2ETests.java:145)] - Step 2: User creation request sent.
+[INFO] 12-05-2025 13:27:46 [main] [Tests.E2ETests.Test_Four_E2E(E2ETests.java:150)] - Step 2: User created successfully.
+[INFO] 12-05-2025 13:27:47 [main] [Tests.E2ETests.Test_Four_E2E(E2ETests.java:157)] - Step 3: User update request sent.
+[INFO] 12-05-2025 13:27:47 [main] [Tests.E2ETests.Test_Four_E2E(E2ETests.java:161)] - Step 3: User updated successfully.
+[INFO] 12-05-2025 13:27:47 [main] [Tests.E2ETests.Test_Four_E2E(E2ETests.java:165)] - Step 4: User deletion request sent and completed.
+[INFO] 12-05-2025 13:27:47 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: Test_Four_E2E
+[INFO] 12-05-2025 13:27:47 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: Test_ONE_E2E
+[INFO] 12-05-2025 13:27:47 [main] [Tests.E2ETests.Test_ONE_E2E(E2ETests.java:31)] - Login request body: name eve.holt@reqres.in password cityslicka
+[INFO] 12-05-2025 13:27:48 [main] [Tests.E2ETests.Test_ONE_E2E(E2ETests.java:34)] - Token: Bearer QpwL5tke4Pnpja7X4
+[INFO] 12-05-2025 13:27:48 [main] [Tests.E2ETests.Test_ONE_E2E(E2ETests.java:42)] - Get user request body: id 7
+[INFO] 12-05-2025 13:27:48 [main] [Tests.E2ETests.Test_ONE_E2E(E2ETests.java:44)] - step 2: Get user id: 7
+[INFO] 12-05-2025 13:27:48 [main] [Tests.E2ETests.Test_ONE_E2E(E2ETests.java:48)] - Update user request body: id 7 name mohammed ali job Software Engineer
+[INFO] 12-05-2025 13:27:49 [main] [Tests.E2ETests.Test_ONE_E2E(E2ETests.java:51)] - step 3 update user name and job has been done
+[INFO] 12-05-2025 13:27:49 [main] [Tests.E2ETests.Test_ONE_E2E(E2ETests.java:55)] - Get updated user request body: id 7
+[ERROR] 12-05-2025 13:27:49 [main] [Listeners.TestListenerClass.afterInvocation(TestListenerClass.java:38)] - Test failed: Test_ONE_E2E
+[INFO] 12-05-2025 13:27:49 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: Test_Six_E2E
+[INFO] 12-05-2025 13:27:49 [main] [Tests.E2ETests.Test_Six_E2E(E2ETests.java:218)] - Step 1: Login successful.
+[INFO] 12-05-2025 13:27:49 [main] [Tests.E2ETests.Test_Six_E2E(E2ETests.java:227)] - Step 2: User creation request sent.
+[INFO] 12-05-2025 13:27:50 [main] [Tests.E2ETests.Test_Six_E2E(E2ETests.java:233)] - Step 2: User created successfully with ID: 471
+[INFO] 12-05-2025 13:27:50 [main] [Tests.E2ETests.Test_Six_E2E(E2ETests.java:237)] - Step 3: All users retrieval request sent.
+[INFO] 12-05-2025 13:27:50 [main] [Tests.E2ETests.Test_Six_E2E(E2ETests.java:240)] - Step 3: All users retrieved successfully.
+[INFO] 12-05-2025 13:27:51 [main] [Tests.E2ETests.Test_Six_E2E(E2ETests.java:245)] - Step 4: Verified that the created user exists in the list of all users.
+[ERROR] 12-05-2025 13:27:51 [main] [Listeners.TestListenerClass.afterInvocation(TestListenerClass.java:38)] - Test failed: Test_Six_E2E
+[INFO] 12-05-2025 13:27:51 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: Test_Three_E2E
+[INFO] 12-05-2025 13:27:51 [main] [Tests.E2ETests.Test_Three_E2E(E2ETests.java:105)] - Step 1: Login successful.
+[INFO] 12-05-2025 13:27:52 [main] [Tests.E2ETests.Test_Three_E2E(E2ETests.java:112)] - Step 2: Retrieved user details successfully.
+[INFO] 12-05-2025 13:27:52 [main] [Tests.E2ETests.Test_Three_E2E(E2ETests.java:118)] - Step 3: User deleted successfully.
+[ERROR] 12-05-2025 13:27:52 [main] [Listeners.TestListenerClass.afterInvocation(TestListenerClass.java:38)] - Test failed: Test_Three_E2E
+[INFO] 12-05-2025 13:27:52 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: Test_Two_E2E
+[INFO] 12-05-2025 13:27:53 [main] [Tests.E2ETests.Test_Two_E2E(E2ETests.java:70)] - Register user request body: name eve.holt@reqres.in password cityslicka
+[INFO] 12-05-2025 13:27:53 [main] [Tests.E2ETests.Test_Two_E2E(E2ETests.java:74)] - Step one done ,Token: Bearer QpwL5tke4Pnpja7X4
+[INFO] 12-05-2025 13:27:53 [main] [Tests.E2ETests.Test_Two_E2E(E2ETests.java:80)] - Create user request body: name Mohamed Ali job Project Manager
+[INFO] 12-05-2025 13:27:53 [main] [Tests.E2ETests.Test_Two_E2E(E2ETests.java:85)] - Step two done , user id: 259
+[ERROR] 12-05-2025 13:27:53 [main] [Listeners.TestListenerClass.afterInvocation(TestListenerClass.java:38)] - Test failed: Test_Two_E2E
+[INFO] 12-05-2025 13:27:54 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: testLogin
+[INFO] 12-05-2025 13:27:54 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: testLogin
+[INFO] 12-05-2025 13:27:54 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: testLoginWithInvalidCredentials
+[INFO] 12-05-2025 13:27:54 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: testLoginWithInvalidCredentials
+[INFO] 12-05-2025 13:27:54 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: testDelayedResponse
+[INFO] 12-05-2025 13:27:55 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: testDelayedResponse
+[INFO] 12-05-2025 13:27:55 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: testInvalidRegister
+[INFO] 12-05-2025 13:27:55 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: testInvalidRegister
+[INFO] 12-05-2025 13:27:55 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: testValidRegister
+[INFO] 12-05-2025 13:27:55 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: testValidRegister
+[INFO] 12-05-2025 13:27:56 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestGetAllResources
+[INFO] 12-05-2025 13:27:57 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestGetAllResources
+[INFO] 12-05-2025 13:27:57 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestGetInvalidSingleResource
+[INFO] 12-05-2025 13:27:57 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestGetInvalidSingleResource
+[INFO] 12-05-2025 13:27:57 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestGetValidSingleResource
+[INFO] 12-05-2025 13:27:58 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestGetValidSingleResource
+[INFO] 12-05-2025 13:27:58 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestCreateUser
+[INFO] 12-05-2025 13:27:59 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestCreateUser
+[INFO] 12-05-2025 13:27:59 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestDeleteUserCheckFunctionality
+[ERROR] 12-05-2025 13:27:59 [main] [Listeners.TestListenerClass.afterInvocation(TestListenerClass.java:38)] - Test failed: TestDeleteUserCheckFunctionality
+[INFO] 12-05-2025 13:27:59 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestDeleteUserCheckResponse
+[INFO] 12-05-2025 13:28:00 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestDeleteUserCheckResponse
+[INFO] 12-05-2025 13:28:00 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestGetAllUsersInFirstPage
+[INFO] 12-05-2025 13:28:01 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestGetAllUsersInFirstPage
+[INFO] 12-05-2025 13:28:01 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestGetAllUsersInSecondPage
+[INFO] 12-05-2025 13:28:01 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestGetAllUsersInSecondPage
+[INFO] 12-05-2025 13:28:01 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestGetSingleUser
+[INFO] 12-05-2025 13:28:02 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestGetSingleUser
+[INFO] 12-05-2025 13:28:02 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestGetSingleUserWithInvalidId
+[INFO] 12-05-2025 13:28:02 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestGetSingleUserWithInvalidId
+[INFO] 12-05-2025 13:28:02 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestUpdateUserWithInvalidId
+[ERROR] 12-05-2025 13:28:02 [main] [Listeners.TestListenerClass.afterInvocation(TestListenerClass.java:38)] - Test failed: TestUpdateUserWithInvalidId
+[INFO] 12-05-2025 13:28:02 [main] [Listeners.TestListenerClass.onTestStart(TestListenerClass.java:18)] - Test started: TestUpdateUserdata
+[INFO] 12-05-2025 13:28:03 [main] [Listeners.TestListenerClass.onTestSuccess(TestListenerClass.java:23)] - Test passed: TestUpdateUserdata
+[INFO] 12-05-2025 13:28:03 [main] [Listeners.TestListenerClass.onFinish(TestListenerClass.java:28)] - All tests finished: All test
