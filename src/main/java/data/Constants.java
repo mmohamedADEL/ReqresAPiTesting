@@ -1,4 +1,4 @@
-package utilities;
+package data;
 
 public class Constants {
     public static final String BASE_URL = "https://reqres.in/api/";
@@ -13,6 +13,5 @@ public class Constants {
 
     public static final String USER_NAME = "eve.holt@reqres.in";
     public static final String PASSWORD = "cityslicka";
-
 
 }

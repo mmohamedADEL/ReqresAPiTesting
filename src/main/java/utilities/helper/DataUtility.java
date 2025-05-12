@@ -4,8 +4,11 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Properties;
 
 public class DataUtility {
     //TODO : Generate random data
@@ -47,6 +50,12 @@ public class DataUtility {
         } else {
             throw new RuntimeException("sub key is not found " + lastKey);
         }
+    }
+    //TODO : read from properties file
+    public static String getPropertyValue(String fileName,String key) throws IOException {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(TEST_DATA_PATH+ fileName + ".properties"));
+        return   properties.getProperty(key);
     }
 
 }

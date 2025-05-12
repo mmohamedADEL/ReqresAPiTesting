@@ -1,7 +1,9 @@
+package Tests;
+
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.Constants;
+import data.Constants;
 import utilities.Requests.LoginUtility;
 
 public class LoginTest {

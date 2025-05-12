@@ -1,9 +1,11 @@
+package Tests;
+
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import utilities.Constants;
+import data.Constants;
 import utilities.Requests.LoginUtility;
 import utilities.Requests.ResourceUtility;
 

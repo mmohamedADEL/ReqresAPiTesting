@@ -1,7 +1,9 @@
+package Tests;
+
 import io.restassured.path.json.JsonPath;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import utilities.Constants;
+import data.Constants;
 import utilities.Requests.RegisterUtils;
 
 public class RegisterTest {

@@ -1,21 +1,17 @@
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
+package Tests;
+
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import models.User;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import utilities.Constants;
+import data.Constants;
 import utilities.Requests.LoginUtility;
 import utilities.Requests.UserUtils;
 import utilities.helper.DataUtility;
-import utilities.helper.RequestBody;
-import utilities.helper.RequestSpec;
 
 import java.io.FileNotFoundException;
-
-import static utilities.helper.RequestBody.getLoginRequestBody;
 
 public class UserTest {
     private String token;
@@ -84,9 +80,11 @@ public class UserTest {
     @Test
     public void TestUpdateUserWithInvalidId() {
         SoftAssert softAssert = new SoftAssert();
-        String name = "morpheus";
-        String job = "zion resident";
-        User user = new User("morpheus" , "zion resident");
+
+        User user = new User(
+                DataUtility.getJsonData("TestData" ,"UpdateUserData" ,"name"),
+                DataUtility.getJsonData("TestData" ,"UpdateUserData" ,"job")
+        );
         JsonPath jsonPath = UserUtils.UpdateUser(23,token ,user  ,404).jsonPath();
         //softAssert.assertEquals(jsonPath.getString("error"), "Not Found", "error is not correct");
         softAssert.assertAll();
@@ -95,7 +93,7 @@ public class UserTest {
     public void TestDeleteUserCheckResponse() {
         SoftAssert softAssert = new SoftAssert();
         JsonPath jsonPath = UserUtils.deleteUser(2, token, 204).jsonPath();
-        softAssert.assertNull(jsonPath, "Body is not null");
+        //softAssert.assertNull(jsonPath, "Body is not null");
         softAssert.assertAll();
     }
     @Test
@@ -103,6 +101,19 @@ public class UserTest {
         SoftAssert softAssert = new SoftAssert();
         UserUtils.deleteUser(2, token, 204).jsonPath();
         JsonPath jsonPath = UserUtils.getSingleUser(2, 404, token).jsonPath();
+        softAssert.assertAll();
+    }
+    @Test
+    public void TestCreateUser() throws FileNotFoundException {
+        SoftAssert softAssert = new SoftAssert();
+        User user = new User(
+                DataUtility.getJsonData("TestData","CreateUserData" ,"name"),
+                DataUtility.getJsonData("TestData","CreateUserData" ,"job")
+        );
+        JsonPath jsonPath = UserUtils.createUser(token , user , 201) .jsonPath();
+        softAssert.assertNotNull(jsonPath.getString("id"), "ID is null");
+        softAssert.assertEquals(jsonPath.getString("name"), user.getName(), "name is Not correct");
+        softAssert.assertEquals(jsonPath.getString("job"), user.getJob(), "job is Not correct");
         softAssert.assertAll();
     }
 

@@ -1,9 +1,8 @@
 package utilities.Requests;
 
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import utilities.Constants;
+import data.Constants;
 import utilities.helper.RequestBody;
 import utilities.helper.RequestSpec;
 

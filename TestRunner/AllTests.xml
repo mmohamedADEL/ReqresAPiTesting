@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Tests">
+    <test verbose="2" preserve-order="true" name="All test" >
+        <suite-files>
+            <suite-file path="Tests.E2ETests.xml"/>
+            <suite-file path="ModuleTests.xml"/>
+        </suite-files>
+    </test>
+</suite>

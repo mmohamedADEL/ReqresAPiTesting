@@ -2,7 +2,7 @@ package utilities.Requests;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import utilities.Constants;
+import data.Constants;
 import utilities.helper.RequestSpec;
 
 public class ResourceUtility {

@@ -2,6 +2,7 @@ package utilities.Requests;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import data.Constants;
 import utilities.helper.RequestSpec;
 
 import static utilities.helper.RequestBody.getRegisterRequestBody;
@@ -13,7 +14,7 @@ public class RegisterUtils {
                 .spec(RequestSpec.getRequestSpec())
                 .body(getRegisterRequestBody(email, password))
                 .when()
-                .post(utilities.Constants.BASE_URL + utilities.Constants.REGISTER_ENDPOINT)
+                .post(Constants.BASE_URL + Constants.REGISTER_ENDPOINT)
                 .then()
                 .log().all()
                 .statusCode(statusCode)

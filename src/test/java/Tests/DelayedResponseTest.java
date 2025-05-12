@@ -1,3 +1,5 @@
+package Tests;
+
 import io.restassured.path.json.JsonPath;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
