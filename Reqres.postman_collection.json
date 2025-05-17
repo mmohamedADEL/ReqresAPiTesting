@@ -96,7 +96,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -104,11 +104,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://reqres.in/api/users?page=2",
-					"protocol": "https",
+					"raw": "{{BaseURL}}/api/users?page=2",
 					"host": [
-						"reqres",
-						"in"
+						"{{BaseURL}}"
 					],
 					"path": [
 						"api",
@@ -347,8 +345,6 @@
 							"    pm.response.to.be.json;\r",
 							"});\r",
 							"\r",
-							"\r",
-							"\r",
 							"var ResourceId = parseInt(pm.environment.get(\"ResourceId\"));\r",
 							"    pm.test(\"Check if ID is correct\", function () {\r",
 							"    pm.expect(response.data.id).to.equal(ResourceId);\r",
@@ -528,8 +524,11 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"exec": [],
-						"type": "text/javascript"
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -546,14 +545,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BaseURL}}/api/user/2",
+					"raw": "{{BaseURL}}/api/user/4",
 					"host": [
 						"{{BaseURL}}"
 					],
 					"path": [
 						"api",
 						"user",
-						"2"
+						"4"
 					]
 				}
 			},
@@ -622,7 +621,12 @@
 						"exec": [
 							"pm.test(\"Status code is 204\", function () {\r",
 							"    pm.response.to.have.status(204);\r",
-							"});"
+							"});\r",
+							"pm.test(\"body is empty\", function () {\r",
+							"    pm.expect(pm.response.text()).to.eql('');\r",
+							"});\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -631,8 +635,11 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"exec": [],
-						"type": "text/javascript"
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -649,14 +656,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BaseURL}}/api/user/2",
+					"raw": "{{BaseURL}}/api/user/125",
 					"host": [
 						"{{BaseURL}}"
 					],
 					"path": [
 						"api",
 						"user",
-						"2"
+						"125"
 					]
 				}
 			},
@@ -687,8 +694,11 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"exec": [],
-						"type": "text/javascript"
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -735,8 +745,11 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"exec": [],
-						"type": "text/javascript"
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -745,7 +758,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \r\n}",
+					"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\"\r\n    \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
