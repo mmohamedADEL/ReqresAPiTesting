@@ -7,7 +7,7 @@ This repository contains API testing projects for the [Reqres](https://reqres.in
 ## 📁 Branches
 
 - `main`: Postman collection for manual testing
-- `master`: REST-assured (Java) project for automated API testing
+-  [master](https://github.com/mmohamedADEL/ReqresAPiTesting/tree/master): REST-assured (Java) project for automated API testing
 
 ---
 
